@@ -1,4 +1,5 @@
 ﻿using System;
+using SWP_Prototype.Spears;
 using SWP_Prototype.Swords;
 
 namespace SWP_Prototype
@@ -14,6 +15,9 @@ namespace SWP_Prototype
 
             Katana k = new Katana(14, 25, Material.Gold, "China", 50);
             weaponManager.AddItem(k);
+
+            Poleaxe p = new Poleaxe(17, 50, Material.Bronze, 20, "Bronze Buster");
+            weaponManager.AddItem(p);
 
             Console.WriteLine(weaponManager.GetAllWeapons());
         }

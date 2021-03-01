@@ -9,8 +9,9 @@ namespace SWP_Prototype
         {
             PrototypeSingleton weaponManager = PrototypeSingleton.GetInstance();
             
-            weaponManager.AddBasicItem(true);
-            weaponManager.AddBasicItem(false);
+            weaponManager.AddBasicItem(WeaponType.LongSword);
+            weaponManager.AddBasicItem(WeaponType.Halberd);
+
             Katana k = new Katana(14, 25, Material.Gold, "China", 50);
             weaponManager.AddItem(k);
 

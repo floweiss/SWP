@@ -27,6 +27,11 @@ namespace SWP_Prototype
         private LongSword _basicLongSword = new LongSword(10, 20, Material.Steel, 30, "Steel Swing");
         private Katana _basicKatana = new Katana(15, 15, Material.Iron, "Japan", 100);
 
+        private List<SpearPrototype> _spears = new List<SpearPrototype>();
+        private Halberd _basicHalberd = new Halberd(18, 30, Material.Silver, 2, "Alexander The Great");
+        private Poleaxe _basicPoleaxe = new Poleaxe(16, 40, Material.Iron, 30, "Hell Hammer");
+
+
         public void AddItem(SwordPrototype sword)
         {
             _swords.Add(sword);
@@ -43,10 +48,6 @@ namespace SWP_Prototype
         }
 
 
-        private List<SpearPrototype> _spears = new List<SpearPrototype>();
-        private Halberd _basicHalberd = new Halberd(18, 30, Material.Silver, 2, "Alexander The Great");
-        private Poleaxe _basicPoleaxe = new Poleaxe(16, 40, Material.Iron, 30, "Hell Hammer");
-
         public void AddItem(SpearPrototype spear)
         {
             _spears.Add(spear);
@@ -62,15 +63,22 @@ namespace SWP_Prototype
             return _spears[index];
         }
 
-        public void AddBasicItem(bool isSword)
+        public void AddBasicItem(WeaponType type)
         {
-            if (isSword)
+            switch (type)
             {
-                AddItem(_basicLongSword.Clone());
-            }
-            else
-            {
-                AddItem(_basicHalberd.Clone());
+                case WeaponType.LongSword:
+                    _swords.Add(_basicLongSword.Clone());
+                    break;
+                case WeaponType.Katana:
+                    _swords.Add(_basicKatana.Clone());
+                    break;
+                case WeaponType.Halberd:
+                    _spears.Add(_basicHalberd.Clone());
+                    break;
+                case WeaponType.Poleaxe:
+                    _spears.Add(_basicPoleaxe.Clone());
+                    break;
             }
         }
 

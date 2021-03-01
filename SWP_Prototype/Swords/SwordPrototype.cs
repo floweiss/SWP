@@ -4,27 +4,27 @@ using System.Text;
 
 namespace SWP_Prototype
 {
-    public abstract class Sword : IItem
+    public abstract class SwordPrototype : IItem
     {
         public int Hitpoints;
         public int Length;
         public Material Material;
 
-        public Sword(int hitpoints, int length, Material material)
+        public SwordPrototype(int hitpoints, int length, Material material)
         {
             Hitpoints = hitpoints;
             Length = length;
             Material = material;
         }
 
-        public Sword(Sword sword)
+        public SwordPrototype(SwordPrototype sword)
         {
             Hitpoints = sword.Hitpoints;
             Length = sword.Length;
             Material = sword.Material;
         }
 
-        public abstract Sword Clone();
+        public abstract SwordPrototype Clone();
 
         public abstract String ToString();
     }

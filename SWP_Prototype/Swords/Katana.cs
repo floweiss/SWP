@@ -2,7 +2,7 @@
 
 namespace SWP_Prototype.Swords
 {
-    public class Katana : Sword
+    public class Katana : SwordPrototype
     {
         public String Source;
         public int Sharpness;
@@ -19,7 +19,7 @@ namespace SWP_Prototype.Swords
             Sharpness = katana.Sharpness;
         }
 
-        public override Sword Clone()
+        public override SwordPrototype Clone()
         {
             return new Katana(this);
         }

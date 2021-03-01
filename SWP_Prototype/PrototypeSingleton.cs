@@ -23,11 +23,11 @@ namespace SWP_Prototype
             return _instance;
         }
 
-        private List<Sword> _swords = new List<Sword>();
+        private List<SwordPrototype> _swords = new List<SwordPrototype>();
         private LongSword _basicLongSword = new LongSword(10, 20, Material.Steel, 30, "Steel Swing");
         private Katana _basicKatana = new Katana(15, 15, Material.Iron, "Japan", 100);
 
-        public void AddItem(Sword sword)
+        public void AddItem(SwordPrototype sword)
         {
             _swords.Add(sword);
         }
@@ -37,17 +37,17 @@ namespace SWP_Prototype
             _swords.RemoveAt(index);
         }
 
-        public Sword GetSword(int index)
+        public SwordPrototype GetSword(int index)
         {
             return _swords[index];
         }
 
 
-        private List<Spear> _spears = new List<Spear>();
+        private List<SpearPrototype> _spears = new List<SpearPrototype>();
         private Halberd _basicHalberd = new Halberd(18, 30, Material.Silver, 2, "Alexander The Great");
         private Poleaxe _basicPoleaxe = new Poleaxe(16, 40, Material.Iron, 30, "Hell Hammer");
 
-        public void AddItem(Spear spear)
+        public void AddItem(SpearPrototype spear)
         {
             _spears.Add(spear);
         }
@@ -57,7 +57,7 @@ namespace SWP_Prototype
             _spears.RemoveAt(index);
         }
 
-        public Spear GetSpear(int index)
+        public SpearPrototype GetSpear(int index)
         {
             return _spears[index];
         }

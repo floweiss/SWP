@@ -2,7 +2,7 @@
 
 namespace SWP_Prototype.Swords
 {
-    public class LongSword : Sword
+    public class LongSword : SwordPrototype
     {
         public int Weight;
         public String SpecialPower;
@@ -19,7 +19,7 @@ namespace SWP_Prototype.Swords
             SpecialPower = longsword.SpecialPower;
         }
 
-        public override Sword Clone()
+        public override SwordPrototype Clone()
         {
             return new LongSword(this);
         }

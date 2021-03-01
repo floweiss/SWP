@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SWP_Prototype.Spears
 {
-    public class Poleaxe : Spear
+    public class Poleaxe : SpearPrototype
     {
         public int Weight;
         public String SpecialMove;
@@ -23,7 +23,7 @@ namespace SWP_Prototype.Spears
             SpecialMove = poleaxe.SpecialMove;
         }
 
-        public override Spear Clone()
+        public override SpearPrototype Clone()
         {
             return new Poleaxe(this);
         }

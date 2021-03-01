@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SWP_Prototype.Spears
 {
-    public class Halberd : Spear
+    public class Halberd : SpearPrototype
     {
         public int Blades;
         public String Origin;
@@ -23,7 +23,7 @@ namespace SWP_Prototype.Spears
             Origin = halberd.Origin;
         }
 
-        public override Spear Clone()
+        public override SpearPrototype Clone()
         {
             return new Halberd(this);
         }

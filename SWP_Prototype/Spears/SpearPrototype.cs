@@ -6,27 +6,27 @@ using System.Threading.Tasks;
 
 namespace SWP_Prototype.Spears
 {
-    public abstract class Spear : IItem
+    public abstract class SpearPrototype : IItem
     {
         public int Hitpoints;
         public int Length;
         public Material Material;
 
-        public Spear(int hitpoints, int length, Material material)
+        public SpearPrototype(int hitpoints, int length, Material material)
         {
             Hitpoints = hitpoints;
             Length = length;
             Material = material;
         }
 
-        public Spear(Spear spear)
+        public SpearPrototype(SpearPrototype spear)
         {
             Hitpoints = spear.Hitpoints;
             Length = spear.Length;
             Material = spear.Material;
         }
 
-        public abstract Spear Clone();
+        public abstract SpearPrototype Clone();
 
         public abstract String ToString();
     }

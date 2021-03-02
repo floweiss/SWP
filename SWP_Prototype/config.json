@@ -1,0 +1,30 @@
+{
+	"LongSword": {
+		"Hitpoints": 10,
+		"Length": 20,
+		"Material": "Steel",
+		"Weight": 30,
+		"SpecialPower": "Steel Swing"
+	},
+	"Katana": {
+		"Hitpoints": 15,
+		"Length": 15,
+		"Material": "Iron",
+		"Source": "Japan",
+		"Sharpness": 100
+	},
+	"Halberd": {
+		"Hitpoints": 18,
+		"Length": 30,
+		"Material": "Silver",
+		"Blades": 2,
+		"Origin": "Alexander The Great"
+	},
+	"Poleaxe": {
+		"Hitpoints": 16,
+		"Length": 40,
+		"Material": "Iron",
+		"Weight": 30,
+		"SpecialMove": "Hell Hammer"
+	}
+}

@@ -1,4 +1,5 @@
 ﻿using System;
+using Newtonsoft.Json.Linq;
 
 namespace SWP_Prototype.Swords
 {
@@ -17,6 +18,12 @@ namespace SWP_Prototype.Swords
         {
             Weight = longsword.Weight;
             SpecialPower = longsword.SpecialPower;
+        }
+
+        public LongSword(JToken token) : base(token)
+        {
+            Weight = (int) token["Weight"];
+            SpecialPower = (string) token["SpecialPower"];
         }
 
         public override SwordPrototype Clone()

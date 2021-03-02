@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Newtonsoft.Json.Linq;
 
 namespace SWP_Prototype.Spears
 {
@@ -21,6 +22,12 @@ namespace SWP_Prototype.Spears
         {
             Weight = poleaxe.Weight;
             SpecialMove = poleaxe.SpecialMove;
+        }
+
+        public Poleaxe(JToken token) : base(token)
+        {
+            Weight = (int)token["Weight"];
+            SpecialMove = (string)token["SpecialMove"];
         }
 
         public override SpearPrototype Clone()

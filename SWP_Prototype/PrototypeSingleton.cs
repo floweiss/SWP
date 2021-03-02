@@ -1,8 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
+using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using SWP_Prototype.Spears;
 using SWP_Prototype.Swords;
 
@@ -10,7 +15,16 @@ namespace SWP_Prototype
 {
     public sealed class PrototypeSingleton
     {
-        private PrototypeSingleton() { }
+        private PrototypeSingleton(string filename)
+        {
+            string content = File.ReadAllText(filename);
+            JObject obj = JObject.Parse(content);
+
+            _basicLongSword = new LongSword(obj["LongSword"]);
+            _basicKatana = new Katana(obj["Katana"]);
+            _basicHalberd = new Halberd(obj["Halberd"]);
+            _basicPoleaxe = new Poleaxe(obj["Poleaxe"]);
+        }
 
         private static PrototypeSingleton _instance = null;
         private static readonly object _lock = new object();
@@ -25,7 +39,7 @@ namespace SWP_Prototype
                     {
                         if (_instance == null)
                         {
-                            _instance = new PrototypeSingleton();
+                            _instance = new PrototypeSingleton("config.json"); // Pathname for config.json file (properties of basic items)
                         }
                     }
                 }
@@ -34,13 +48,12 @@ namespace SWP_Prototype
         }
 
         private List<SwordPrototype> _swords = new List<SwordPrototype>();
-        private LongSword _basicLongSword = new LongSword(10, 20, Material.Steel, 30, "Steel Swing");
-        private Katana _basicKatana = new Katana(15, 15, Material.Iron, "Japan", 100);
+        private LongSword _basicLongSword;
+        private Katana _basicKatana;
 
         private List<SpearPrototype> _spears = new List<SpearPrototype>();
-        private Halberd _basicHalberd = new Halberd(18, 30, Material.Silver, 2, "Alexander The Great");
-        private Poleaxe _basicPoleaxe = new Poleaxe(16, 40, Material.Iron, 30, "Hell Hammer");
-
+        private Halberd _basicHalberd;
+        private Poleaxe _basicPoleaxe;
 
         public void AddItem(SwordPrototype sword)
         {
@@ -77,7 +90,7 @@ namespace SWP_Prototype
         {
             switch (type)
             {
-                case WeaponType.LongSword:
+                default: // Also for LongSword
                     _swords.Add(_basicLongSword.Clone());
                     break;
                 case WeaponType.Katana:

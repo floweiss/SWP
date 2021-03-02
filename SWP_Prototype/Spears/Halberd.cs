@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Newtonsoft.Json.Linq;
 
 namespace SWP_Prototype.Spears
 {
@@ -21,6 +22,12 @@ namespace SWP_Prototype.Spears
         {
             Blades = halberd.Blades;
             Origin = halberd.Origin;
+        }
+
+        public Halberd(JToken token) : base(token)
+        {
+            Blades = (int)token["Blades"];
+            Origin = (string)token["Origin"];
         }
 
         public override SpearPrototype Clone()

@@ -13,14 +13,24 @@ namespace SWP_Prototype
         private PrototypeSingleton() { }
 
         private static PrototypeSingleton _instance = null;
+        private static readonly object _lock = new object();
 
-        public static PrototypeSingleton GetInstance()
+        public static PrototypeSingleton GetInstance
         {
-            if (_instance == null)
+            get
             {
-                _instance = new PrototypeSingleton();
+                if (_instance == null)
+                {
+                    lock (_lock)
+                    {
+                        if (_instance == null)
+                        {
+                            _instance = new PrototypeSingleton();
+                        }
+                    }
+                }
+                return _instance;
             }
-            return _instance;
         }
 
         private List<SwordPrototype> _swords = new List<SwordPrototype>();

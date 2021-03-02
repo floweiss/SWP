@@ -8,7 +8,7 @@ namespace SWP_Prototype
     {
         static void Main(string[] args)
         {
-            PrototypeSingleton weaponManager = PrototypeSingleton.GetInstance();
+            PrototypeSingleton weaponManager = PrototypeSingleton.GetInstance;
             
             weaponManager.AddBasicItem(WeaponType.LongSword);
             weaponManager.AddBasicItem(WeaponType.Halberd);

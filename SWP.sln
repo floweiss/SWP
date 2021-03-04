@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31005.135
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SWP_Prototype", "SWP_Prototype\SWP_Prototype.csproj", "{9A34BD97-EF94-4203-A202-2AB07C09BC32}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SWP_Prototype", "SWP_Prototype\SWP_Prototype.csproj", "{9A34BD97-EF94-4203-A202-2AB07C09BC32}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SWP_Bridge", "SWP_Bridge\SWP_Bridge.csproj", "{80C427A9-6B48-48B5-8788-ED72193D121D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{9A34BD97-EF94-4203-A202-2AB07C09BC32}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9A34BD97-EF94-4203-A202-2AB07C09BC32}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9A34BD97-EF94-4203-A202-2AB07C09BC32}.Release|Any CPU.Build.0 = Release|Any CPU
+		{80C427A9-6B48-48B5-8788-ED72193D121D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{80C427A9-6B48-48B5-8788-ED72193D121D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{80C427A9-6B48-48B5-8788-ED72193D121D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{80C427A9-6B48-48B5-8788-ED72193D121D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -105,6 +105,21 @@ namespace SWP_Prototype
             }
         }
 
+        public IItem GetNewItem(WeaponType type)
+        {
+            switch (type)
+            {
+                default: // Also for LongSword
+                    return _basicLongSword.Clone();
+                case WeaponType.Katana:
+                    return _basicKatana.Clone();
+                case WeaponType.Halberd:
+                    return _basicHalberd.Clone();
+                case WeaponType.Poleaxe:
+                    return _basicPoleaxe.Clone();
+            }
+        }
+
         public String GetAllWeapons()
         {
             String result = "Swords:\n";

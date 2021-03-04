@@ -17,11 +17,15 @@ namespace SWP_Prototype
             weaponManager.AddBasicItem(WeaponType.Halberd);
             weaponManager.AddBasicItem(WeaponType.Poleaxe);
 
-            Katana k = new Katana(14, 25, Material.Gold, "China", 50);
+            /*Katana k = new Katana(14, 25, Material.Gold, "China", 50);
             weaponManager.AddItem(k);
 
             Poleaxe p = new Poleaxe(17, 50, Material.Bronze, 20, "Bronze Buster");
-            weaponManager.AddItem(p);
+            weaponManager.AddItem(p);*/
+
+            LongSword l = weaponManager.GetNewItem(WeaponType.LongSword) as LongSword;
+            l.SpecialPower = "new power";
+            weaponManager.AddItem(l);
 
             Console.WriteLine(weaponManager.GetAllWeapons());
         }

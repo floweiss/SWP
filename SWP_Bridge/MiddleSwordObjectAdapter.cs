@@ -7,18 +7,19 @@ using SWP_Adapter.Swords;
 
 namespace SWP_Adapter
 {
-    public class SwordAdapter : IGlowingSword
+    // Objektbasierter Adapter
+    public class MiddleSwordObjectAdapter : IGlowingSword
     {
         private MiddleSword _middleSword;
 
-        public SwordAdapter(MiddleSword ms)
+        public MiddleSwordObjectAdapter(MiddleSword ms)
         {
             _middleSword = ms;
         }
 
         public string GlowingFight()
         {
-            return _middleSword.Fight() + "... look! It glows too!";
+            return _middleSword.Fight() + "... look! It glows like an object!";
         }
     }
 }

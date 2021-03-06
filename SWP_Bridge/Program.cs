@@ -8,18 +8,12 @@ namespace SWP_Adapter
     {
         static void Main(string[] args)
         {
-            List<IGlowingSword> swordList = new List<IGlowingSword>();
+            SwordKeeper swordKeeper = new SwordKeeper();
 
-            swordList.Add(new LongSword());
-            swordList.Add(new ShortSword());
-
-            MiddleSword middleSword = new MiddleSword();
-            swordList.Add(new SwordAdapter(middleSword));
-
-            foreach (var sword in swordList)
-            {
-                Console.WriteLine(sword.GlowingFight());
-            }
+            Console.WriteLine(swordKeeper.GetGlowingSword(SwordType.Short).GlowingFight());
+            Console.WriteLine(swordKeeper.GetGlowingSword(SwordType.Middle).GlowingFight());
+            Console.WriteLine(swordKeeper.GetGlowingSword(SwordType.Middle, false).GlowingFight());
+            Console.WriteLine(swordKeeper.GetGlowingSword(SwordType.Long).GlowingFight());
         }
     }
 }

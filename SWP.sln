@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.31005.135
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SWP_Prototype", "SWP_Prototype\SWP_Prototype.csproj", "{9A34BD97-EF94-4203-A202-2AB07C09BC32}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SWP_Adapter", "SWP_Bridge\SWP_Adapter.csproj", "{80C427A9-6B48-48B5-8788-ED72193D121D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SWP_Adapter", "SWP_Adapter\SWP_Adapter.csproj", "{80C427A9-6B48-48B5-8788-ED72193D121D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

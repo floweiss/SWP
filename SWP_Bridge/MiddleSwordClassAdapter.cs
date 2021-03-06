@@ -12,7 +12,7 @@ namespace SWP_Adapter
     {
         public string GlowingFight()
         {
-            return base.Fight() + "... look! It glows like a class!";
+            return Fight() + "... look! It glows like a class!";
         }
     }
 }

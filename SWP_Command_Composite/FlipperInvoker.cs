@@ -27,6 +27,12 @@ namespace SWP_Command_Composite
                 case "target":
                     ExecuteCommand(new TargetCommand());
                     break;
+                case "hole":
+                    ExecuteCommand(new HoleCommand());
+                    break;
+                case "secret":
+                    ExecuteCommand(new SecretRoomCommand());
+                    break;
                 default:
                     Console.WriteLine("This object can not be hit!");
                     break;

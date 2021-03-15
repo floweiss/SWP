@@ -8,7 +8,7 @@ namespace SWP_Command_Composite.Commands
     {
         public int Execute()
         {
-            Console.WriteLine("Ball hits secret bumper! 150 points!");
+            Console.WriteLine("   Ball hits secret bumper! 150 points!");
             return 150;
         }
     }

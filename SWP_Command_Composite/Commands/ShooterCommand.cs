@@ -8,7 +8,7 @@ namespace SWP_Command_Composite.Commands
     {
         public int Execute()
         {
-            Console.WriteLine("Ball hits shooter! It rushes back into game area!");
+            Console.WriteLine("   Ball hits shooter! It rushes back into game area!");
             return 0;
         }
     }

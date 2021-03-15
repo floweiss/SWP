@@ -9,7 +9,7 @@ namespace SWP_Command_Composite.Commands
         public HoleCommand()
         {
             AddCommand(new UndergroundTargetCommand());
-            AddCommand(new RampCommand());
+            AddCommand(new ShooterCommand());
         }
 
         public int Execute()

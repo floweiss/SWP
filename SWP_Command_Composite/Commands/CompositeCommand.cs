@@ -4,9 +4,16 @@ using System.Text;
 
 namespace SWP_Command_Composite.Commands
 {
-    public abstract class CompositeCommand
+    public abstract class CompositeCommand : ICommand
     {
-        protected List<ICommand> _commands = new List<ICommand>();
+        protected List<ICommand> _commands;
+        protected PointReceiver _pointReceiver;
+
+        protected CompositeCommand(PointReceiver pointReceiver)
+        {
+            _commands = new List<ICommand>();
+            _pointReceiver = pointReceiver;
+        }
 
         public void AddCommand(ICommand addedCommand)
         {
@@ -16,6 +23,14 @@ namespace SWP_Command_Composite.Commands
         public void RemoveCommand(ICommand removedCommand)
         {
             _commands.Remove(removedCommand);
+        }
+
+        public virtual void Execute()
+        {
+            foreach (var command in _commands)
+            {
+                command.Execute();
+            }
         }
     }
 }

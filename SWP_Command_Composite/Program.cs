@@ -7,7 +7,7 @@ namespace SWP_Command_Composite
         static void Main(string[] args)
         {
             PointReceiver pointReceiver = new PointReceiver(0);
-            FlipperInvoker flipper = new FlipperInvoker(pointReceiver);
+            FlipperInvoker flipper = new FlipperInvoker(pointReceiver); // Invoker acts as client too
             Console.WriteLine($"Flipper started! You start with {pointReceiver.GetPoints()} points");
 
             while (true)

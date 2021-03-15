@@ -6,6 +6,6 @@ namespace SWP_Command_Composite.Commands
 {
     public interface ICommand
     {
-        public int Execute();
+        public void Execute();
     }
 }

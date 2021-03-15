@@ -6,25 +6,25 @@ namespace SWP_Command_Composite.Commands
 {
     public class SecretRoomCommand : CompositeCommand, ICommand
     {
-        public SecretRoomCommand()
+        private PointReceiver _pointReceiver;
+        public SecretRoomCommand(PointReceiver pointReceiver)
         {
-            AddCommand(new SecretBumperCommand());
-            AddCommand(new SecretBumperCommand());
-            AddCommand(new SecretBumperCommand());
-            AddCommand(new ShooterCommand());
+            _pointReceiver = pointReceiver;
+            AddCommand(new SecretBumperCommand(_pointReceiver));
+            AddCommand(new SecretBumperCommand(_pointReceiver));
+            AddCommand(new SecretBumperCommand(_pointReceiver));
+            AddCommand(new ShooterCommand(_pointReceiver));
         }
 
-        public int Execute()
+        public void Execute()
         {
             Console.WriteLine("Ball vanishes in secret room! What will happen next...");
 
             int addedPoints = 0;
             foreach (var command in _commands)
             {
-                addedPoints += command.Execute();
+                command.Execute();
             }
-
-            return addedPoints;
         }
     }
 }

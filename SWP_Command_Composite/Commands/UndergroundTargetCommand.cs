@@ -6,10 +6,17 @@ namespace SWP_Command_Composite.Commands
 {
     public class UndergroundTargetCommand : ICommand
     {
-        public int Execute()
+        private PointReceiver _pointReceiver;
+
+        public UndergroundTargetCommand(PointReceiver pointReceiver)
         {
-            Console.WriteLine("   Ball hits underground target! 100 points!");
-            return 100;
+            _pointReceiver = pointReceiver;
+        }
+
+        public void Execute()
+        {
+            Console.WriteLine("   Ball hits underground target! 100 points!"); 
+            _pointReceiver.AddPoints(100);
         }
     }
 }

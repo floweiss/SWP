@@ -7,11 +7,11 @@ namespace SWP_Command_Composite
 {
     public class FlipperInvoker
     {
-        public int Points;
+        private PointReceiver _pointReceiver;
 
-        public FlipperInvoker(int initialPoints)
+        public FlipperInvoker(PointReceiver pointReceiver)
         {
-            Points = initialPoints;
+            _pointReceiver = pointReceiver;
         }
 
         public void HitSomething(string hit)
@@ -19,19 +19,19 @@ namespace SWP_Command_Composite
             switch (hit.ToLower())
             {
                 case "bumper":
-                    ExecuteCommand(new BumperCommand());
+                    ExecuteCommand(new BumperCommand(_pointReceiver));
                     break;
                 case "ramp":
-                    ExecuteCommand(new RampCommand());
+                    ExecuteCommand(new RampCommand(_pointReceiver));
                     break;
                 case "target":
-                    ExecuteCommand(new TargetCommand());
+                    ExecuteCommand(new TargetCommand(_pointReceiver));
                     break;
                 case "hole":
-                    ExecuteCommand(new HoleCommand());
+                    ExecuteCommand(new HoleCommand(_pointReceiver));
                     break;
                 case "secret":
-                    ExecuteCommand(new SecretRoomCommand());
+                    ExecuteCommand(new SecretRoomCommand(_pointReceiver));
                     break;
                 default:
                     Console.WriteLine("This object can not be hit!");
@@ -41,8 +41,7 @@ namespace SWP_Command_Composite
 
         public void ExecuteCommand(ICommand command)
         {
-            int addedPoints = command.Execute();
-            Points += addedPoints;
+            command.Execute();
         }
     }
 }

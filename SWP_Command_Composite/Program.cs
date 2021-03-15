@@ -6,8 +6,9 @@ namespace SWP_Command_Composite
     {
         static void Main(string[] args)
         {
-            FlipperInvoker flipper = new FlipperInvoker(0);
-            Console.WriteLine($"Flipper started! You start with {flipper.Points} points");
+            PointReceiver pointReceiver = new PointReceiver(0);
+            FlipperInvoker flipper = new FlipperInvoker(pointReceiver);
+            Console.WriteLine($"Flipper started! You start with {pointReceiver.GetPoints()} points");
 
             while (true)
             {
@@ -18,10 +19,10 @@ namespace SWP_Command_Composite
                     break;
                 }
                 flipper.HitSomething(hitObject);
-                Console.WriteLine($"Your current points are {flipper.Points}");
+                Console.WriteLine($"Your current points are {pointReceiver.GetPoints()}");
             }
 
-            Console.WriteLine($"Flipper ended! You have reached {flipper.Points} points!");
+            Console.WriteLine($"Flipper ended! You have reached {pointReceiver.GetPoints()} points!");
         }
     }
 }

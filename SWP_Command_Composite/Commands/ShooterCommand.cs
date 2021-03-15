@@ -6,10 +6,17 @@ namespace SWP_Command_Composite.Commands
 {
     public class ShooterCommand : ICommand
     {
-        public int Execute()
+        private PointReceiver _pointReceiver;
+
+        public ShooterCommand(PointReceiver pointReceiver)
+        {
+            _pointReceiver = pointReceiver;
+        }
+
+        public void Execute()
         {
             Console.WriteLine("   Ball hits shooter! It rushes back into game area!");
-            return 0;
+            _pointReceiver.AddPoints(0); // just to demonstrate
         }
     }
 }

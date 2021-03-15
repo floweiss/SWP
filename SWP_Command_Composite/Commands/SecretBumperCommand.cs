@@ -6,10 +6,17 @@ namespace SWP_Command_Composite.Commands
 {
     public class SecretBumperCommand : ICommand
     {
-        public int Execute()
+        private PointReceiver _pointReceiver;
+
+        public SecretBumperCommand(PointReceiver pointReceiver)
+        {
+            _pointReceiver = pointReceiver;
+        }
+
+        public void Execute()
         {
             Console.WriteLine("   Ball hits secret bumper! 150 points!");
-            return 150;
+            _pointReceiver.AddPoints(150);
         }
     }
 }

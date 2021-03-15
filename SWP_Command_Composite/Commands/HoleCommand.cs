@@ -6,23 +6,24 @@ namespace SWP_Command_Composite.Commands
 {
     public class HoleCommand : CompositeCommand, ICommand
     {
-        public HoleCommand()
+        private PointReceiver _pointReceiver;
+
+        public HoleCommand(PointReceiver pointReceiver)
         {
-            AddCommand(new UndergroundTargetCommand());
-            AddCommand(new ShooterCommand());
+            _pointReceiver = pointReceiver;
+            AddCommand(new UndergroundTargetCommand(_pointReceiver));
+            AddCommand(new ShooterCommand(_pointReceiver));
         }
 
-        public int Execute()
+        public void Execute()
         {
             Console.WriteLine("Ball hits hole! What wil happen next...");
 
             int addedPoints = 0;
             foreach (var command in _commands)
             {
-                addedPoints += command.Execute();
+                command.Execute();
             }
-
-            return addedPoints;
         }
 
         

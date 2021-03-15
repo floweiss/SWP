@@ -11,17 +11,17 @@ namespace SWP_Command_Composite
 
             while (true)
             {
-                Console.Write("Object you hit(bumper, ramp, target, hole, secret): ");
+                Console.Write("Object the ball hit (bumper, ramp, target, hole, secret) or quit flipper (exit/quit): ");
                 string hitObject = Console.ReadLine();
                 if (hitObject.ToLower() == "quit" || hitObject.ToLower() == "exit")
-                { 
-                    break;   
+                {
+                    break;
                 }
                 flipper.HitSomething(hitObject);
                 Console.WriteLine($"Your current points are {flipper.Points}");
             }
 
-            Console.WriteLine("Flipper ended!");
+            Console.WriteLine($"Flipper ended! You have reached {flipper.Points} points!");
         }
     }
 }

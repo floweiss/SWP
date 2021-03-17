@@ -27,10 +27,7 @@ namespace SWP_Command_Composite.Commands
 
         public virtual void Execute()
         {
-            foreach (var command in _commands)
-            {
-                command.Execute();
-            }
+            _commands.ForEach(command => command.Execute());
         }
     }
 }

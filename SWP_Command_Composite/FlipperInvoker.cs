@@ -8,10 +8,17 @@ namespace SWP_Command_Composite
     public class FlipperInvoker
     {
         private PointReceiver _pointReceiver;
+        private Dictionary<string, ICommand> _commands;
 
         public FlipperInvoker(PointReceiver pointReceiver)
         {
             _pointReceiver = pointReceiver;
+            _commands = new Dictionary<string, ICommand>();
+            _commands.Add("bumper", new BumperCommand(_pointReceiver));
+            _commands.Add("ramp", new RampCommand(_pointReceiver));
+            _commands.Add("target", new TargetCommand(_pointReceiver));
+            _commands.Add("hole", new HoleCommand(_pointReceiver));
+            _commands.Add("secret", new SecretRoomCommand(_pointReceiver));
         }
 
         public void HitSomething(string hit)
@@ -19,29 +26,24 @@ namespace SWP_Command_Composite
             switch (hit.ToLower())
             {
                 case "bumper":
-                    ExecuteCommand(new BumperCommand(_pointReceiver));
+                    _commands["bumper"].Execute();
                     break;
                 case "ramp":
-                    ExecuteCommand(new RampCommand(_pointReceiver));
+                    _commands["ramp"].Execute();
                     break;
                 case "target":
-                    ExecuteCommand(new TargetCommand(_pointReceiver));
+                    _commands["target"].Execute();
                     break;
                 case "hole":
-                    ExecuteCommand(new HoleCommand(_pointReceiver));
+                    _commands["hole"].Execute();
                     break;
                 case "secret":
-                    ExecuteCommand(new SecretRoomCommand(_pointReceiver));
+                    _commands["secret"].Execute();
                     break;
                 default:
                     Console.WriteLine("This object can not be hit!");
                     break;
             }
-        }
-
-        public void ExecuteCommand(ICommand command)
-        {
-            command.Execute();
         }
     }
 }

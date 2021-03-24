@@ -15,20 +15,19 @@ namespace SWP_Visitor
             elements.Add(new Target('Y', false, 15));
 
             Console.WriteLine("Report state at the beginning:");
-            IVisitor visitor = new ReportVisitor();
-            VisitorClient.ElementsAcceptVisitor(elements, visitor);
+            IVisitor reportVisitor = new ReportVisitor();
+            VisitorClient.ElementsAcceptVisitor(elements, reportVisitor);
 
             Console.WriteLine("\nGet points:");
-            visitor = new PointVisitor();
-            VisitorClient.ElementsAcceptVisitor(elements, visitor);
+            IVisitor pointVisitor = new PointVisitor();
+            VisitorClient.ElementsAcceptVisitor(elements, pointVisitor);
 
             Console.WriteLine("\nReset elements");
-            visitor = new ResetVisitor();
-            VisitorClient.ElementsAcceptVisitor(elements, visitor);
+            IVisitor resetVisitor = new ResetVisitor();
+            VisitorClient.ElementsAcceptVisitor(elements, resetVisitor);
 
             Console.WriteLine("\nReport state at the end:");
-            visitor = new ReportVisitor();
-            VisitorClient.ElementsAcceptVisitor(elements, visitor);
+            VisitorClient.ElementsAcceptVisitor(elements, reportVisitor);
         }
     }
 }

@@ -9,7 +9,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SWP_Adapter", "SWP_Adapter\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SWP_Command_Composite", "SWP_Command_Composite\SWP_Command_Composite.csproj", "{BC431A9E-714F-4F53-995A-68273B00C257}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SWP_Visitor", "SWP_Visitor\SWP_Visitor.csproj", "{7205BAAA-D442-42AA-8EB2-FE091B8B8F78}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SWP_Visitor", "SWP_Visitor\SWP_Visitor.csproj", "{7205BAAA-D442-42AA-8EB2-FE091B8B8F78}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SWP_DependencyInversionPrinciple", "SWP_DependencyInversionPrinciple\SWP_DependencyInversionPrinciple.csproj", "{2FADAFF6-9EF9-4154-BE84-195E203DE574}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{7205BAAA-D442-42AA-8EB2-FE091B8B8F78}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7205BAAA-D442-42AA-8EB2-FE091B8B8F78}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7205BAAA-D442-42AA-8EB2-FE091B8B8F78}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2FADAFF6-9EF9-4154-BE84-195E203DE574}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2FADAFF6-9EF9-4154-BE84-195E203DE574}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2FADAFF6-9EF9-4154-BE84-195E203DE574}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2FADAFF6-9EF9-4154-BE84-195E203DE574}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -8,6 +8,6 @@ namespace SWP_DependencyInversionPrinciple.DataAccess
 {
     interface IProductDataAccess
     {
-        public List<string> GetProducts();
+        public Dictionary<string, double> GetProducts();
     }
 }

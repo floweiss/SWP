@@ -7,7 +7,7 @@ using SWP_DependencyInversionPrinciple.DataAccess;
 
 namespace SWP_DependencyInversionPrinciple.BusinessLogic
 {
-    class ProductBusinessLogic
+    class ProductBusinessLogic : IProductBusinessLogic
     {
         private IProductDataAccess _productDataAccess;
 
@@ -16,9 +16,20 @@ namespace SWP_DependencyInversionPrinciple.BusinessLogic
             _productDataAccess = dataAccessFactory.GetProductDataAccess();
         }
 
-        public List<string> GetProducts()
+        public Dictionary<string, double> GetProducts()
         {
-            return _productDataAccess.GetProducts();
+            Dictionary<string, double> products = _productDataAccess.GetProducts();
+            foreach (var namePrice in products)
+            {
+                products[namePrice.Key] = CalculateSellPrice(namePrice.Value);
+            }
+
+            return products;
+        }
+
+        public double CalculateSellPrice(double price)
+        {
+            return price * 1.25;
         }
     }
 }

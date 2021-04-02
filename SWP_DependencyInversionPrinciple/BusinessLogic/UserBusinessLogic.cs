@@ -7,7 +7,7 @@ using SWP_DependencyInversionPrinciple.DataAccess;
 
 namespace SWP_DependencyInversionPrinciple.BusinessLogic
 {
-    class UserBusinessLogic
+    class UserBusinessLogic : IUserBusinessLogic
     {
         private IUserDataAccess _userDataAccess;
 

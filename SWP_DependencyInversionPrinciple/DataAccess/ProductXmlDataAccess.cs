@@ -8,9 +8,14 @@ namespace SWP_DependencyInversionPrinciple.DataAccess
 {
     class ProductXmlDataAccess : IProductDataAccess
     {
-        public List<string> GetProducts()
+        public Dictionary<string, double> GetProducts()
         {
-            return new() {"TV", "Phone", "Notebook"};
+            return new()
+            {
+                { "TV", 500.0 },
+                { "Phone", 300.0 },
+                { "Notebook", 700.0 }
+            };
         }
     }
 }

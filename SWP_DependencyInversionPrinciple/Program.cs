@@ -1,6 +1,7 @@
 ﻿using System;
 using SWP_DependencyInversionPrinciple.BusinessLogic;
 using SWP_DependencyInversionPrinciple.DataAccess;
+using SWP_DependencyInversionPrinciple.UI;
 
 namespace SWP_DependencyInversionPrinciple
 {
@@ -8,7 +9,21 @@ namespace SWP_DependencyInversionPrinciple
     {
         static void Main(string[] args)
         {
-            IDataAccessFactory dataAccessFactory = new DbDataAccessFactory();
+            DataSource dataSource = DataSource.Xml;
+            IUserInterface ui = new CommandLineUserInterface(dataSource);
+            Console.WriteLine($"Querying from {dataSource}");
+            while (true)
+            {
+                Console.Write("What do you want to see (Products, Users)? ");
+                string input = Console.ReadLine();
+                if (input.ToLower() == "exit" || input.ToLower() == "quit")
+                {
+                    break;
+                }
+                ui.ExecuteCommand(input);
+            }
+
+            /*IDataAccessFactory dataAccessFactory = new DbDataAccessFactory();
             ProductBusinessLogic productBusinessLogic = new ProductBusinessLogic(dataAccessFactory);
             UserBusinessLogic userBusinessLogic = new UserBusinessLogic(dataAccessFactory);
 
@@ -26,7 +41,7 @@ namespace SWP_DependencyInversionPrinciple
             Console.Write("\n\nProducts XML:\t");
             productBusinessLogic.GetProducts().ForEach(product => Console.Write($"{product}\t"));
             Console.Write("\nUsernames XML:\t");
-            userBusinessLogic.GetUserNames().ForEach(user => Console.Write($"{user}\t"));
+            userBusinessLogic.GetUserNames().ForEach(user => Console.Write($"{user}\t"));*/
         }
     }
 }

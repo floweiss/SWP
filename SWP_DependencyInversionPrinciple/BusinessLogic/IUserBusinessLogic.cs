@@ -8,6 +8,6 @@ namespace SWP_DependencyInversionPrinciple.BusinessLogic
 {
     interface IUserBusinessLogic
     {
-        List<string> GetUserNames();
+        List<string> GetUsers();
     }
 }

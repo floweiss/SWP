@@ -8,6 +8,6 @@ namespace SWP_DependencyInversionPrinciple.DataAccess
 {
     interface IUserDataAccess
     {
-        List<string> GetUserNames();
+        List<string> GetUsers();
     }
 }

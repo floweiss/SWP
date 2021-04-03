@@ -16,9 +16,9 @@ namespace SWP_DependencyInversionPrinciple.BusinessLogic
             _userDataAccess = dataAccessFactory.GetUserDataAccess();
         }
 
-        public List<string> GetUserNames()
+        public List<string> GetUsers()
         {
-            return _userDataAccess.GetUserNames();
+            return _userDataAccess.GetUsers();
         }
     }
 }

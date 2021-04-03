@@ -8,7 +8,7 @@ namespace SWP_DependencyInversionPrinciple.DataAccess
 {
     class UserXmlDataAccess : IUserDataAccess
     {
-        public List<string> GetUserNames()
+        public List<string> GetUsers()
         {
             // Get data from XML file
             return new() { "User97", "User98", "User99" };

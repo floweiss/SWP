@@ -23,6 +23,8 @@ namespace SWP_DependencyInversionPrinciple
                 }
                 ui.ExecuteCommand(input);
             }
+
+            Console.WriteLine($"Application closed");
         }
     }
 }

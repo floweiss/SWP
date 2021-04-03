@@ -29,7 +29,7 @@ namespace SWP_DependencyInversionPrinciple.Services
 
         public string GetUsers()
         {
-            List<string> users = _userBusinessLogic.GetUserNames();
+            List<string> users = _userBusinessLogic.GetUsers();
             string result = "";
             users.ForEach(user =>
             {

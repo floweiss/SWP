@@ -9,11 +9,13 @@ namespace SWP_DependencyInversionPrinciple.BusinessLogic
 {
     class ProductBusinessLogic : IProductBusinessLogic
     {
+        private IDataAccessFactory _dataAccessFactory;
         private IProductDataAccess _productDataAccess;
 
         public ProductBusinessLogic(IDataAccessFactory dataAccessFactory)
         {
-            _productDataAccess = dataAccessFactory.GetProductDataAccess();
+            _dataAccessFactory = dataAccessFactory;
+            _productDataAccess = _dataAccessFactory.GetProductDataAccess();
         }
 
         public Dictionary<string, double> GetProducts()

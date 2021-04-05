@@ -9,11 +9,13 @@ namespace SWP_DependencyInversionPrinciple.BusinessLogic
 {
     class UserBusinessLogic : IUserBusinessLogic
     {
+        private IDataAccessFactory _dataAccessFactory;
         private IUserDataAccess _userDataAccess;
 
         public UserBusinessLogic(IDataAccessFactory dataAccessFactory)
         {
-            _userDataAccess = dataAccessFactory.GetUserDataAccess();
+            _dataAccessFactory = dataAccessFactory;
+            _userDataAccess = _dataAccessFactory.GetUserDataAccess();
         }
 
         public List<string> GetUsers()

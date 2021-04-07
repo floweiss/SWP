@@ -10,6 +10,7 @@ namespace SWP_DependencyInversionPrinciple.DataAccess
     {
         public Dictionary<string, double> GetProducts()
         {
+            // Fetch products from database...
             return new()
             {
                 {"Chair", 50.0}, 

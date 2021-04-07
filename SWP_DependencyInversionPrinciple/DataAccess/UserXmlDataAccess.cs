@@ -10,7 +10,7 @@ namespace SWP_DependencyInversionPrinciple.DataAccess
     {
         public List<string> GetUsers()
         {
-            // Get data from XML file
+            // Extract users from XML...
             return new() { "User97", "User98", "User99" };
         }
     }

@@ -10,7 +10,7 @@ namespace SWP_DependencyInversionPrinciple.DataAccess
     {
         public List<string> GetUsers()
         {
-            // Get data from DB
+            // Fetch users from database...
             return new() {"User1", "User2", "User3"};
         }
     }

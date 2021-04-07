@@ -10,6 +10,7 @@ namespace SWP_DependencyInversionPrinciple.DataAccess
     {
         public Dictionary<string, double> GetProducts()
         {
+            // Extract products from XML...
             return new()
             {
                 { "TV", 500.0 },
